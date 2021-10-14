@@ -55,4 +55,13 @@ public class PalindromeServiceTest {
         assertThat(result).isEqualTo(false);
     }
 
+    @Test
+    public void shouldWorkFor5ItemsAsNotPalindrome() {
+        // when
+        boolean result = palindromeService.isPalindrome(new int[]{5, 2, 3, 2, 1});
+
+        // then
+        assertThat(result).isEqualTo(false);
+    }
+
 }
