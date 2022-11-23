@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class PalindromeServiceTest {
 
@@ -17,6 +18,16 @@ public class PalindromeServiceTest {
     @Test
     public void shouldNotCrashForEmpty() {
         assertDoesNotThrow(() -> palindromeService.isPalindrome(new int[]{}));
+    }
+
+    @Test
+    public void shouldReturnFalseForNull() {
+        assertFalse(palindromeService.isPalindrome(null));
+    }
+
+    @Test
+    public void shouldReturnFalseForEmptyArray() {
+        assertFalse(palindromeService.isPalindrome(new int[]{}));
     }
 
     @Test
